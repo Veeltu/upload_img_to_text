@@ -1,0 +1,21 @@
+[
+  {
+    "chunk-GYWC62UC.js?v=1568c053:21536": "Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools"
+  },
+  {
+    "Authenticator.tsx:41": {
+      "Auth": {}
+    }
+  },
+  {
+    "useToken.tsx:14": "idToken =>, eyJraWQiOiJUQ05jM3V3ZnFxMXNQdmdwdmxYb0dwbWxFWnZYUytEVE9RTjRkUm02aW9FPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI3ZWI1MTdiZS0zYTliLTQ2YzQtYmI4MS02MWExM2U4OTQwMDMiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LWNlbnRyYWwtMS5hbWF6b25hd3MuY29tXC9ldS1jZW50cmFsLTFfYUlGT01Na1FIIiwiY29nbml0bzp1c2VybmFtZSI6IjdlYjUxN2JlLTNhOWItNDZjNC1iYjgxLTYxYTEzZTg5NDAwMyIsIm9yaWdpbl9qdGkiOiI5NmZmODYyMi1iNTk5LTRlMDItODczZi0zZTYwYTBiOGM0ZmIiLCJhdWQiOiIzZ2dvMnFoMGk2ODAwZDNhdTdyNTl0aThuZSIsImV2ZW50X2lkIjoiMzMzYTc5ZWQtNTI1My00NmQ4LWFmMmYtOGE1NmMyN2RlNDAzIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3MDY5MDMxNjcsIm5hbWUiOiJBZGFtVGFtIiwibmlja25hbWUiOiJBZGFtVHUiLCJleHAiOjE3MDY5NzY2OTgsImlhdCI6MTcwNjk3MzA5OCwianRpIjoiZTVlY2MzZGUtMDg4OC00MDFhLWE3NDktMWFjYTAxYjk1Y2I3IiwiZW1haWwiOiJhZGFtYW5kcnlzN0BnbWFpbC5jb20ifQ.e057tsRQiN6i-0z2Pir2KsuXULkXie_MOrxpdCUKJUKAsbwP5-Z28twoA0AeIjy22iImNDP2_xWRNfvwjKeksIxz1mlqE0TonkmYkKxOWD9HEn5E9oIs-67tz0NKXJpCsyS4xay8Z7BE3YsoySGXaMhSXe78735wHNc_028qAkmJmmVtTNgxH6Q8siwPRuajpCd3SS8hFuumPJMURItzGGL1ju751zXyP016mI5A2TnBLiTcwVkTeVRF6mPZ0muyCDoAETBnyIjkwJzJifCOb3L4G5fqZ5PMbaNsNmt9xwORXl-QD0TXSN1TqEETADoJx2zjo5kSnyh_11FgGLO67w"
+  },
+  {
+    "SingleFileUploader.tsx:45": {
+      "FormData": {
+        "input": "File",
+        "stateMachineArn": "arn:aws:states:eu-central-1:211125364203:stateMachine:MyStateMachine-vglq35s73"
+      }
+    }
+  }
+]
