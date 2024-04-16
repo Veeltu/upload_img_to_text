@@ -5,6 +5,7 @@ import test_page from "../test_img/bookpage-test.jpg"
 import TagsInput from "./Tags/TagsInput"
 
 import ReduxTest from './ReduxTest';
+import { useSelector } from "react-redux";
 
 //page url : http://react-app-notes.s3-website.eu-central-1.amazonaws.com/
 // const API = "https://nwsj6k6n86.execute-api.eu-central-1.amazonaws.com/dev/upload-image";
@@ -19,8 +20,9 @@ const SingleFileUploader = (userID: any) => {
     >("initial");
     const [toggle, setToggle] = useState(false);
 
-    const [tags, setTags] = useState<null | String[]>(null)
     // const demoTags: string[] = ["tag1", "tag2", "tag3"]
+    const tags = useSelector((state: any) => state.tags.tags); // Retrieve tags from Redux store
+
 
     const toBase64 = (file: File) => new Promise<string>((resolve, reject) => {
         const reader = new FileReader();
@@ -44,14 +46,6 @@ const SingleFileUploader = (userID: any) => {
 
     // const idToken = useAuthToken();
 
-    const handleAddTags = (text: String) => {
-        const content = [];
-        content.push(text)
-
-        setTags(content)
-        console.log(tags)
-        //add tags
-    }
 
     const handleUpload = async () => {
         if (file) {
@@ -110,6 +104,11 @@ const SingleFileUploader = (userID: any) => {
         setToggle(!toggle);
     };
 
+    const tagsList = tags.map((e: any) => {
+        return e;
+    })
+    console.log(tagsList)
+
     return (
         <>
             <div className="SingleFileContainer"></div>
@@ -133,7 +132,11 @@ const SingleFileUploader = (userID: any) => {
                         <li>Name: {file.name}</li>
                         <li>Type: {file.type}</li>
                         <li>Size: {file.size} bytes</li>
-                        <li>Tags: {}</li>
+                        {/* <li> <ul>
+                            {tags.map((tag: string, index: number) => (
+                                <li key={index}>Tag: {tag}</li>
+                            ))}
+                        </ul></li> */}
                         <img
                             className="preview"
                             src={URL.createObjectURL(file)}
@@ -149,7 +152,7 @@ const SingleFileUploader = (userID: any) => {
                         Add tags
                     </button>
 
-                        {toggle ? <TagsInput  /> : null}
+                    {toggle ? <TagsInput /> : null}
 
                     <button onClick={handleUpload} className="submit">
                         Upload that file
