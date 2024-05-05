@@ -1,25 +1,40 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { AnyIfEmpty, useDispatch } from "react-redux";
 import { TagsInput as ReactTagsInput } from "react-tag-input-component";
 import { addTag } from "../../features/tags/tagsSlice";
+import { SymbolicLinkList } from "aws-sdk/clients/codecommit";
 
 export default function CustomTagsInput() {
   const [selected, setSelected] = useState<string[]>([]);
   const dispatch = useDispatch();
 
+  const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      console.log("ENTER")
+    }
+  }
+
+  const handleSendTags = () => {
+    dispatch(addTag(selected))
+  }
+
   const handleAddTags = (input: string[]) => {
-
-    // if (typeof input === "string") {
-    //   // If input is a string, convert it to an array
-    //   input = [input];
-    // }
-    input.forEach(tag => {
-       dispatch(addTag(tag)); // Dispatch addTag action for each tag
-     });
-
-    // setSelected([...selected, ...input]); // Update selected tags state
     setSelected(input)
-  };
+  }
+  console.log(selected)
+
+
+
+  // const handleAddTags = (input: string[]) => {
+  //   console.log(input)
+  //   if (input.length === 0) return; // Do nothing if no tags are entered
+  //   const lastTag = input[input.length - 1]; // Get the last tag entered
+  //   if (lastTag.trim() !== '') { // Check if the tag is not empty
+  //     dispatch(addTag(lastTag)); // Dispatch action to add the last tag
+  //   }
+  // };
+  
+
 
   return (
     <div>
@@ -27,10 +42,14 @@ export default function CustomTagsInput() {
       <ReactTagsInput
         value={selected}
         onChange={(input) => handleAddTags(input)}
+        onKeyUp={handleKeyUp}
         name="fruits"
         placeHolder="enter fruits"
       />
       <em>press enter to add new tag</em>
+      <br />
+      <button onClick={handleSendTags}>  add TAGS to file</button>
     </div>
   );
 }
+

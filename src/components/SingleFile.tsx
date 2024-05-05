@@ -4,7 +4,6 @@ import axios from "axios";
 import test_page from "../test_img/bookpage-test.jpg"
 import TagsInput from "./Tags/TagsInput"
 
-import ReduxTest from './ReduxTest';
 import { useSelector } from "react-redux";
 
 //page url : http://react-app-notes.s3-website.eu-central-1.amazonaws.com/
@@ -100,14 +99,13 @@ const SingleFileUploader = (userID: any) => {
     }
 
     const handleToggleChange = () => {
-        console.log(toggle)
         setToggle(!toggle);
     };
 
     const tagsList = tags.map((e: any) => {
         return e;
     })
-    console.log(tagsList)
+    // console.log(tagsList)
 
     return (
         <>
@@ -123,7 +121,6 @@ const SingleFileUploader = (userID: any) => {
                 <button onClick={demoHandleFileChange}>demo img</button>
             </div>
 
-            <ReduxTest />
 
             {file && (
                 <section>
@@ -132,11 +129,12 @@ const SingleFileUploader = (userID: any) => {
                         <li>Name: {file.name}</li>
                         <li>Type: {file.type}</li>
                         <li>Size: {file.size} bytes</li>
-                        {/* <li> <ul>
+                        <li> <ul>
                             {tags.map((tag: string, index: number) => (
                                 <li key={index}>Tag: {tag}</li>
                             ))}
-                        </ul></li> */}
+                        </ul></li> 
+                        {/* <li>tags : {tagsList}</li> */}
                         <img
                             className="preview"
                             src={URL.createObjectURL(file)}

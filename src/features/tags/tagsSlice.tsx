@@ -13,11 +13,17 @@ export const tagsSlice = createSlice({
   initialState,
   reducers: {
     addTag : (state, action: PayloadAction<string>) => {
-      state.tags.push(action.payload)
+      state.tags.push(...action.payload)
     },
     removeTag: (state) => {
       state.tags.pop();
     }
+    // removeTag: (state, action: PayloadAction<string>) => {
+    //   const index = state.tags.indexOf(action.payload);
+    //   if (index !== -1) {
+    //     state.tags.splice(index, 1); // Remove the tag from the array
+    //   }
+    // }
   },
 })
 
